@@ -1,8 +1,12 @@
 import React from "react";
-import "../styles/Header.css";
+import Typography from "@material-ui/core/Typography";
 
 function Header(props) {
-  return <header>{props.title}</header>;
+  return (
+    <Typography variant="h1" component="h2" align="center" paragraph>
+      {props.title}
+    </Typography>
+  );
 }
 
 export default Header;

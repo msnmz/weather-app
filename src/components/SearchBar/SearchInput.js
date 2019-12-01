@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 
 function SearchInput(props) {
   return (
-    <Grid container spacing={1} alignItems="flex-end">
+    <React.Fragment>
       <Grid item>
         <SearchIcon />
       </Grid>
@@ -17,7 +17,7 @@ function SearchInput(props) {
           onChange={props.setSearchInput}
         />
       </Grid>
-    </Grid>
+    </React.Fragment>
   );
 }
 

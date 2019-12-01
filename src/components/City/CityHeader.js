@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography";
 
 function CityHeader(props) {
   return (
-    <Typography variant="h1" component="h2">
+    <Typography variant="h2" component="h2" paragraph>
       {props.name}, {props.country}
     </Typography>
   );
