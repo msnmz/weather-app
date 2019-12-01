@@ -1,18 +1,27 @@
 import React from "react";
-import CityDetail from "./CityDetail";
-import "../../styles/CityDetailList.css";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Divider from "@material-ui/core/Divider";
+import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
 
 function CityDetailList(props) {
   return (
-    <ul className="city-detail-list">
+    <List>
       {props.details.map((detail, idx) => (
-        <CityDetail
-          name={detail.name}
-          value={detail.value}
-          key={"city_detail_" + idx}
-        />
+        <ListItem key={"city_detail_" + idx}>
+          <ListItemText
+            primary={detail.name}
+            secondary={
+              <Typography variant="body2" component="span">
+                {detail.value}
+              </Typography>
+            }
+          />
+          <Divider variant="inset" component="li" />
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 }
 

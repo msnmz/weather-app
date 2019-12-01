@@ -1,12 +1,16 @@
 import React from "react";
-import "../../styles/CityWeather.css";
+import Typography from "@material-ui/core/Typography";
 
 function CityWeather(props) {
   return (
-    <div className="city-weather">
-      <h2 className="city-weather-title">{props.main}</h2>
-      <h6 className="city-weather-subtitle">{props.description}</h6>
-    </div>
+    <Typography component="div">
+      <Typography variant="h3" component="h2">
+        {props.main}
+      </Typography>
+      <Typography variant="subtitle1" component="h2">
+        {props.description}
+      </Typography>
+    </Typography>
   );
 }
 
