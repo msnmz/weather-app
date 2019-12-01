@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/CityList.css";
-import City from "./City";
+import City from "./City/City";
 
 function CityList(props) {
   return (
