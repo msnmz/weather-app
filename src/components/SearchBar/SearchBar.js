@@ -17,7 +17,7 @@ function SearchBar(props) {
         setSearchInput={props.searchInputListener}
       />
       <SearchButton
-        disables={props.searchInput.length === 0}
+        disabled={props.searchInput.length === 0}
         onClick={props.onSearch}
       />
     </Grid>
