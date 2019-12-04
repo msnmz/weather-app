@@ -6,8 +6,9 @@ function SearchButton(props) {
   return (
     <Button
       onClick={props.onClick}
-      variant="contained"
-      color="default"
+      variant='contained'
+      color='default'
+      disabled={props.disabled}
       startIcon={<FindReplaceIcon />}
     >
       Search

@@ -8,15 +8,18 @@ function SearchBar(props) {
     <Grid
       container
       spacing={1}
-      alignItems="center"
-      direction="row"
-      justify="center"
+      alignItems='center'
+      direction='row'
+      justify='center'
     >
       <SearchInput
         searchInput={props.searchInput}
         setSearchInput={props.searchInputListener}
       />
-      <SearchButton onClick={props.onSearch} />
+      <SearchButton
+        disables={props.searchInput.length === 0}
+        onClick={props.onSearch}
+      />
     </Grid>
   );
 }
