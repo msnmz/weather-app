@@ -11,9 +11,12 @@ function CityWeather(props) {
   function onSearchInputChange(event) {
     setSearchInput(event.target.value);
   }
+  function removeCity(id) {
+    setCities(cities.filter(city => city.id !== id));
+  }
   function onSearchButtonClicked() {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}&units=metric`
     )
       .then(resp => {
         if (resp.ok) return { success: true, data: resp.json() };
@@ -51,7 +54,7 @@ function CityWeather(props) {
         searchInputListener={onSearchInputChange}
         onSearch={onSearchButtonClicked}
       />
-      {apiResult.succeed && <CityList cities={cities} />}
+      {apiResult.succeed && <CityList cities={cities} onRemove={removeCity} />}
       {!apiResult.succeed && apiResult.error && (
         <Typography variant='body1' component='h2' align='center' color='error'>
           {apiResult.error.message}

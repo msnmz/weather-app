@@ -7,6 +7,8 @@ export default function CityList(props) {
       {props.cities.map(city => (
         <li key={"city_" + city.id}>
           <City
+            onRemoveListener={props.onRemove}
+            id={city.id}
             city={{ name: city.name, country: city.sys.country }}
             weather={city.weather[0]}
             details={[
