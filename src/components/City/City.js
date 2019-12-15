@@ -24,7 +24,10 @@ function City(props) {
     <Paper className={styles().root}>
       <Fab
         className={styles().closeButton}
-        onClick={() => props.onRemoveListener(props.id)}
+        onClick={e => {
+          e.preventDefault();
+          props.onRemoveListener(props.id);
+        }}
       >
         <Close />
       </Fab>
